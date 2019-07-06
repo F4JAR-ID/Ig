@@ -25,18 +25,20 @@ do
 done
 
 #banner
-echo -e $'''
-                _  __       _ 
-__     | _|_ o |_)|_     o (_|
-||||_| |  |_ | |_)|  ___ | __|
-\e[1;31mcontact: https://fb.me/n00b.me\e[1;37m
+echo -e $'''\e[1;32m
+
+┏┓ ┏━━┓ ┏━━ ┗┓┏┛ ┏━━┓   ┃┗━┓ ┏━━┓ ┏━━┓ ┃┃┏┓
+┣┫ ┃┏┓┓ ┃━━┫ ┃┃  ┃┏┓┃ _ ┃┏┓┃ ┃┏┓┃ ┃┏━┛ ┃┗┛┛
+┃┃ ┃┃┃┃ ┣━━┃ ┃┗┓ ┃┏┓┃   ┃┃┃┃ ┃┏┓┃ ┃┗━┓ ┃┏┓┓
+┗┛ ┗┛┗┛ ┗━━┛ ┗━┛ ┗┛┗┛   ┗┛┗┛ ┗┛┗┛ ┗━━┛ ┗┛┗┛
+\e[1;31mcontac my fb Jarr Id\e[1;37m
 '''
 
 #asking
-read -p $'[\e[1;34m?\e[1;37m] search by query: ' ask
+read -p $'[\e[1;34m?\e[1;37m] Username : ' ask
 collect=$(curl -s "https://www.instagram.com/web/search/topsearch/?context=blended&query=${ask}" | jq -r '.users[].user.username' > target)
-echo $'[\e[1;34m*\e[1;37m] just found: '$collect''$(< target wc -l ; echo "user")
-read -p $'[\e[1;34m?\e[1;37m] password to use: ' pass
+echo $'[\e[1;34m*\e[1;37m] Ditemukan :\e[1;32m '$collect''$(< target wc -l ; echo "user")
+read -p $'\e[1;m[\e[1;34m?\e[1;37m] password crack : ' pass
 echo "Start cracking..."
 
 #start_brute
